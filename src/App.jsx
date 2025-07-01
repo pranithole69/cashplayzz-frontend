@@ -4,6 +4,8 @@ import "./App.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const backendURL = import.meta.env.VITE_BACKEND_URL;
+
 function App() {
   const navigate = useNavigate();
 
@@ -25,7 +27,7 @@ function App() {
   const [signupUsername, setSignupUsername] = useState("");
   const [signupPassword, setSignupPassword] = useState("");
 
-  // Show current time
+  // Time update
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
@@ -36,7 +38,7 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  // Fake stats updater
+  // Stats updater
   useEffect(() => {
     const interval = setInterval(() => {
       const change = Math.floor(Math.random() * 11) + 5;
@@ -62,7 +64,7 @@ function App() {
     if (!signupEmail || !signupUsername || !signupPassword) return alert("All fields required.");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/signup", {
+      const res = await axios.post(`${backendURL}/api/auth/signup`, {
         email: signupEmail,
         username: signupUsername,
         password: signupPassword,
@@ -74,11 +76,11 @@ function App() {
     }
   };
 
-  // ✅ Login (corrected: email used)
+  // ✅ Login
   const handleLogin = async () => {
     if (!loginEmail || !loginPassword) return alert("Enter both fields.");
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post(`${backendURL}/api/auth/login`, {
         email: loginEmail,
         password: loginPassword,
       });
@@ -120,7 +122,7 @@ function App() {
         </p>
       </div>
 
-      {/* User Agreement Popup */}
+      {/* User Agreement */}
       {showAgreement && (
         <div className="agreement-popup">
           <h2>User Agreement</h2>
