@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./dashboard.css";
+import './temp.css';
 import { FaWallet, FaBars, FaTimes } from "react-icons/fa";
 import { GiTwoCoins } from "react-icons/gi";
 
