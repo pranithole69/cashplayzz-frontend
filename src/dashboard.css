@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-
 .dashboard-container {
   background: url("./assets/bg.png") no-repeat center center fixed;
   background-size: cover;
@@ -97,6 +95,7 @@
   margin: 60px auto 0;
   max-width: 600px;
   text-align: center;
+
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
