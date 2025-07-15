@@ -5,6 +5,7 @@
   "dependencies": {
     "@react-three/drei": "^10.5.0",
     "@react-three/fiber": "^9.2.0",
+    "body-parser": "^2.2.0",
     "framer-motion": "^12.23.0",
     "jsonwebtoken": "^9.0.2",
     "react-toastify": "^11.0.5",
